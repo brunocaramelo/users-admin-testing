@@ -2,12 +2,13 @@
 
 namespace Admin\User\Models;
 
+use Illuminate\Support\Facades\Hash;
+
 use Admin\User\Validators\UserValidator;
 use Admin\User\Exceptions\UserEditException;
 use Admin\User\Entities\UserEntity;
 use Admin\User\Repositories\UserRepository;
-use Illuminate\Support\Facades\Hash;
- 
+use Admin\User\Repositories\UserCacheRepository; 
 
 class UserModel
 {
@@ -20,7 +21,8 @@ class UserModel
 
     public function getList()
     {
-        return $this->prodRepo->getList( )->get();
+        $userCache = new UserCacheRepository( $this->prodRepo );
+        return $userCache->getList();
     }
 
     public function remove( $identify )
@@ -58,7 +60,8 @@ class UserModel
 
     public function find( $identify )
     {
-        return $this->prodRepo->find( $identify );
+        $userCache = new UserCacheRepository( $this->prodRepo );
+        return $userCache->find( $identify );
     }
 
     public function findByCode( $value )

@@ -1,6 +1,7 @@
 <?php 
 
 namespace Admin\User\Repositories;
+
 use Admin\User\Entities\UserEntity;
 
 class UserRepository

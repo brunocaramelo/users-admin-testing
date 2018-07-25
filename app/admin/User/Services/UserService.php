@@ -1,6 +1,7 @@
 <?php
 
 namespace Admin\User\Services;
+
 use Admin\User\Models\UserModel;
 
 class UserService

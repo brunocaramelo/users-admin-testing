@@ -37,3 +37,4 @@ RUN apt-get update && apt-get -y install rsyslog
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 WORKDIR /var/www/html
+
