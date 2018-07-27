@@ -22,9 +22,13 @@ A aplicação é separada pelos seguintes conteineres
 3 - ENTRAR NO DIRETORIO BASE DA APLICACAO RODAR OS COMANDOS
 
 1 - sudo docker-compose up -d;
+
 2 - sudo docker exec -t php /var/www/html/artisan migrate;
+
 3 - sudo docker exec -t php /var/www/html/artisan db:seed;
+
 4 - sudo docker exec -t php phpunit;
+
 
 1 -  para que as imagens sejam armazenandas e executadas e subir as instancias
 
