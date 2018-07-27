@@ -30,6 +30,8 @@ para gerencimento de ambientes com o uso de:
     3 - sudo docker exec -t php /var/www/html/artisan db:seed;
     4 - sudo docker exec -t php phpunit;
 
+Os comandos acima fazem:
+
     1 -  para que as imagens sejam armazenandas e executadas e subir as instancias
     
     2 -  para que o framework gere e aplique o mapeamento para a base de dados (SQL) podendo ser Mysql, PostGres , Oracle , SQL Serve ou SQLITE por exemplo
@@ -41,6 +43,7 @@ para gerencimento de ambientes com o uso de:
         - testes de unidade
      
 O mesmo pode ser rodado em uma unica vez com o comando:
+
         sudo docker-compose up -d; sudo docker exec -t php /var/www/html/artisan migrate; sudo docker exec -t php /var/www/html/artisan db:seed; sudo docker exec -t php phpunit;
 
 APOS RODAR A aplicação estara disponivel em 
