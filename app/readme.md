@@ -1,27 +1,56 @@
-# Laravel PHP Framework
+EXECUTAR ANTES DA APLICAÇÃO CLIENTE
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Aplicação simples de CRUD de usuários utilizando técnicas que podem ser utilizadas com CI/CD
+para gerencimento de ambientes com o uso de:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+    - DOCKER  com docker compose
+    - NGINX
+    - PHP
+    - MYSQL
+    - REDIS
+    - SQLITE ( para Suite de testes / in memory )
+    - LARAVEL FRAMEWORK
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+    A aplicação é separada pelos seguintes conteineres
+    - mysql
+    - redis
+    - php / fpm
+    - web / nginx
 
-## Official Documentation
+1- Baixar repositório 
+    - git clone https://github.com/brunocaramelo/queue-test.git
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+2 - VERIFICAR  SE AS PORTAS 4001 E 3306 ESTÃO OCUPADAS,
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+3 - ENTRAR NO DIRETORIO BASE DA APLICACAO RODAR OS COMANDOS 
+    
+    1 - sudo docker-compose up -d;
+    2 - sudo docker exec -t php /var/www/html/artisan migrate;
+    3 - sudo docker exec -t php /var/www/html/artisan db:seed;
+    4 - sudo docker exec -t php phpunit;
 
-## Security Vulnerabilities
+    1 -  para que as imagens sejam armazenandas e executadas e subir as instancias
+    
+    2 -  para que o framework gere e aplique o mapeamento para a base de dados (SQL) podendo ser Mysql, PostGres , Oracle , SQL Serve ou SQLITE por exemplo
+    
+    3 -  para que o framework  aplique mudanças nos dados da base, no caso inserção de um primeiro usuário.
+    
+    4 - para que o framework execute a suite de testes.
+        - testes de API  
+        - testes de unidade
+     
+O mesmo pode ser rodado em uma unica vez com o comando:
+        sudo docker-compose up -d; sudo docker exec -t php /var/www/html/artisan migrate; sudo docker exec -t php /var/www/html/artisan db:seed; sudo docker exec -t php phpunit;
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+APOS RODAR A aplicação estara disponivel em 
 
-## License
+http://localhost:4001/api/v1/users/
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Rotas: 
+GET - api/v1/users/ (Listar Usuario) 
+GET - api/v1/user/{id} (Detalhar Usuario) 
+PUT - api/v1/user/{id} (Editar Usuario) 
+POST - api/v1/user/ (Criar Usuario ) 
+DELETE - api/v1/user/{id} (Excluir Usuario)
+
