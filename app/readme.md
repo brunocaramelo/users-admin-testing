@@ -49,8 +49,13 @@ http://localhost:4001/api/v1/users/
 
 Rotas: 
 GET - api/v1/users/ (Listar Usuario) 
+
 GET - api/v1/user/{id} (Detalhar Usuario) 
+
 PUT - api/v1/user/{id} (Editar Usuario) 
+
 POST - api/v1/user/ (Criar Usuario ) 
+
 DELETE - api/v1/user/{id} (Excluir Usuario)
+
 
