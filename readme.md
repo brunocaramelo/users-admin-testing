@@ -40,3 +40,19 @@ Os comandos acima fazem:
 4 - para que o framework execute a suite de testes.
     - testes de API  
     - testes de unidade
+
+O mesmo pode ser rodado em uma unica vez com o comando: sudo docker-compose up -d; sudo docker exec -t php /var/www/html/artisan migrate; sudo docker exec -t php /var/www/html/artisan db:seed; sudo docker exec -t php phpunit;
+
+APOS RODAR A aplicação estara disponivel em
+
+http://localhost:4001/api/v1/users/
+
+Rotas: GET - api/v1/users/ (Listar Usuario)
+
+GET - api/v1/user/{id} (Detalhar Usuario)
+
+PUT - api/v1/user/{id} (Editar Usuario)
+
+POST - api/v1/user/ (Criar Usuario )
+
+DELETE - api/v1/user/{id} (Excluir Usuario)
