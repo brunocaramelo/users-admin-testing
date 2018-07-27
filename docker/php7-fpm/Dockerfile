@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
       pcntl \
       pdo_mysql \
       pdo_pgsql \
+      pdo_sqlite \
       pgsql \
       zip \
       opcache
