@@ -29,6 +29,7 @@ A aplicação é separada pelos seguintes conteineres
 
 4 - sudo docker exec -t php phpunit;
 
+Os comandos acima fazem:
 
 1 -  para que as imagens sejam armazenandas e executadas e subir as instancias
 
