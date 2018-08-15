@@ -18,7 +18,7 @@ para gerencimento de ambientes com o uso de:
     - web / nginx
 
 1- Baixar repositório 
-    - git clone https://github.com/brunocaramelo/queue-test.git
+    - git clone https://github.com/brunocaramelo/users-admin-testing.git
 
 2 - VERIFICAR  SE AS PORTAS 4001 E 3306 ESTÃO OCUPADAS,
 
